@@ -40,8 +40,9 @@ class _BallState extends State<Ball> {
         child: FlatButton(
           child: Image.asset('images/ball$ballNumber.png'),
           onPressed: () {
-            ballNumber = Random().nextInt(5);
-            print(ballNumber);
+            setState(() {
+              ballNumber = Random().nextInt(5) + 1;
+            });
           },
         ),
       ),
